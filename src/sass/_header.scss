@@ -1,0 +1,182 @@
+.header {
+  padding: 2.8rem 4rem 2.8rem 5.6rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+
+  @media (max-width: 1200px) {
+    padding: 2.4rem 1.6rem;
+  }
+
+  &__logo {
+    width: 14rem;
+    margin-left: 1rem;
+
+    @media (max-width: 1200px) {
+      margin-right: auto;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    width: 36rem;
+
+    position: relative;
+
+    &--input {
+      width: 100%;
+      border: none;
+      background-color: var(--banner-background);
+      padding: 0 1.6rem 0 4.4rem;
+      border-radius: var(--radius-8);
+      height: 4.8rem;
+      color: var(--on-background);
+      transition: var(--transition-short);
+
+      &::placeholder {
+        font-size: 1.8rem;
+        color: var(--on-surface-variant);
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 2px var(--on-surface-variant);
+      }
+
+      &:focus,
+      &:active {
+        box-shadow: 0 0 0 2px var(--on-surface);
+        padding-inline-start: 16px;
+        outline: none;
+      }
+    }
+
+    &--btn {
+      outline: none;
+      border: none;
+      background-color: transparent;
+
+      position: absolute;
+      left: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: var(--transition-short);
+
+      cursor: pointer;
+
+      img {
+        width: 2.4rem;
+        height: 2.4rem;
+        opacity: 0.5;
+      }
+    }
+
+    &--close {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: none;
+    padding: 1.2rem;
+    cursor: pointer;
+
+    @media (max-width: 1200px) {
+      display: block;
+    }
+
+    img {
+      width: 2.4rem;
+    }
+
+    [data-menu-close] {
+      display: none;
+    }
+
+    &.active [data-menu-close] {
+      display: block;
+    }
+
+    &.active [data-menu-open] {
+      display: none;
+    }
+  }
+}
+
+.header__search--input:focus ~ .header__search--btn {
+  opacity: 0;
+  display: none;
+}
+
+// header seach funcitonality
+.header {
+  &__search {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__mobile-search {
+    display: none;
+    padding: 1.2rem;
+    background-color: var(--banner-background);
+    border-radius: var(--radius-8);
+    cursor: pointer;
+
+    &:hover img {
+      opacity: 1;
+    }
+
+    img {
+      width: 2.4rem;
+      opacity: 0.5;
+      transition: all 0.2s;
+    }
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.mobile-search-clicked .header__mobile-search {
+  display: none;
+}
+
+.mobile-search-clicked .header__logo {
+  display: none;
+}
+
+.mobile-search-clicked .header__menu {
+  display: none;
+}
+
+.mobile-search-clicked .header__search {
+  display: flex;
+  width: 100%;
+}
+
+.mobile-search-clicked .header__search .header__search--close {
+  display: block;
+  margin-left: 1rem;
+  padding: 1.2rem;
+  background-color: var(--banner-background);
+  border-radius: var(--radius-8);
+  cursor: pointer;
+
+  &:hover img {
+    opacity: 1;
+  }
+
+  img {
+    width: 2.4rem;
+    opacity: 0.5;
+    transition: all 0.2s;
+  }
+}

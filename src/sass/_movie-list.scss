@@ -1,0 +1,36 @@
+.movie-list {
+  &__title {
+    font-size: 5.4rem;
+    margin-bottom: 5.6rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    column-gap: 16px;
+    row-gap: 20px;
+  }
+
+  &__btn {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    color: var(--white);
+    font-size: var(--fs-button);
+    font-weight: var(--weight-bold);
+    cursor: pointer;
+    padding-block: 12px;
+    padding-inline: 20px 24px;
+    border-radius: var(--radius-8);
+    transition: var(--transition-short);
+
+    background-color: var(--primary-variant);
+    margin-inline: auto;
+    margin-block: 36px 60px;
+
+    &:hover {
+      --primary-variant: hsla(350, 67%, 39%, 1);
+    }
+  }
+}
